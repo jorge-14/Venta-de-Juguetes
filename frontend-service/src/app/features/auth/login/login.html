@@ -1,0 +1,47 @@
+<div class="min-h-screen flex bg-gradient-to-br from-slate-900 via-slate-950 to-black">
+  <div class="hidden lg:flex lg:w-1/2 flex-col items-center justify-center bg-gradient-to-br from-sky-500 to-teal-800
+        relative overflow-hidden">
+    <div class="absolute -top-20 -left-20 w-72 h-72 bg-white/10 rounded-full"></div>
+    <div class="absolute bottom-10 right-10 w-40 h-40 bg-white/10 rounded-full"></div>
+    <img src="/images/260_f2.png" alt="swampert" class="w-90 h-100 object-contain mb-6 relative z-10"/>
+    <h1 class="text-white text-4xl font-bold relative z-10">
+      Venta de Juguetes
+    </h1>
+    <p class="text-emerald-100 mt-3 text-lg relative z-10">
+      Gestioná tu tienda de forma simple
+    </p>
+  </div>
+  <div class="w-full lg:w-1/2 flex items-center justify-center p-6">
+    <div
+      class="w-full max-w-sm bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl p-8">
+      <div class="text-center mb-8">
+        <h2 class="text-2xl font-semibold text-white">
+          Iniciar sesión
+        </h2>
+        <p class="text-gray-400 text-sm mt-1">
+          Ingresá tus datos para continuar
+        </p>
+      </div>
+      <form (ngSubmit)="handleSubmit()" class="flex flex-col gap-5">
+        <div class="flex flex-col gap-1">
+          <label for="username" class="text-sm text-gray-300 font-medium">Usuario</label>
+          <p-iconfield>
+            <p-inputicon class="pi pi-user" />
+            <input pInputText id="username" type="text" [(ngModel)]="username" name="username" class="w-full"
+                   placeholder="tu usuario"/>
+          </p-iconfield>
+        </div>
+        <div class="flex flex-col gap-1">
+          <label for="password" class="text-sm text-gray-300 font-medium">Contraseña</label>
+          <p-iconfield>
+            <p-inputicon class="pi pi-lock" />
+            <p-password id="password" [(ngModel)]="password" name="password" [feedback]="false" [toggleMask]="true"
+                        styleClass="w-full" inputStyleClass="w-full" placeholder="tu contraseña">
+            </p-password>
+          </p-iconfield>
+        </div>
+        <p-button type="submit" label="Ingresar" icon="pi pi-sign-in" styleClass="w-full mt-2"></p-button>
+      </form>
+    </div>
+  </div>
+</div>
