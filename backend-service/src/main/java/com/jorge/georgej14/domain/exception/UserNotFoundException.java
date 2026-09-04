@@ -1,6 +1,4 @@
-package com.jorge.georgej14.application.port.input;
-
-import com.jorge.georgej14.domain.model.UserModel;
+package com.jorge.georgej14.domain.exception;
 
 /*
  *----------------------------------------
@@ -13,7 +11,9 @@ import com.jorge.georgej14.domain.model.UserModel;
  *   03.09.2026 | Jorge Luis Choque Callizaya | Creación Inicial
  *----------------------------------------
  */
-public interface CreateUserCase {
+public class UserNotFoundException extends RuntimeException {
 
-    UserModel createUser(UserModel userModel);
+    public UserNotFoundException(Long id) {
+        super("User not found with id: " + id);
+    }
 }

@@ -2,6 +2,8 @@ package com.jorge.georgej14.application.port.output;
 
 import com.jorge.georgej14.domain.model.UserModel;
 import org.springframework.stereotype.Component;
+import java.util.List;
+import java.util.Optional;
 
 /*
  *----------------------------------------
@@ -19,4 +21,7 @@ import org.springframework.stereotype.Component;
 public interface UserRepositoryPort {
 
     UserModel saveUser(UserModel userModel);
+    List<UserModel> listAllUser();
+    void deleteUserById(Long id);
+    Optional<UserModel> getUserById(Long id);
 }

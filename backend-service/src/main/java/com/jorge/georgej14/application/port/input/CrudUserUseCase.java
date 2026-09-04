@@ -1,8 +1,7 @@
-package com.jorge.georgej14.infrastructure.adapter.input.rest.response;
+package com.jorge.georgej14.application.port.input;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import com.jorge.georgej14.domain.model.UserModel;
+import java.util.List;
 
 /*
  *----------------------------------------
@@ -15,13 +14,10 @@ import lombok.Setter;
  *   03.09.2026 | Jorge Luis Choque Callizaya | Creación Inicial
  *----------------------------------------
  */
+public interface CrudUserUseCase {
 
-@Getter
-@Setter
-@Builder
-public class CreateUserResponseDto {
-
-    private Long id;
-    private String name;
-    private String email;
+    UserModel createUser(UserModel userModel);
+    UserModel updateUser(Long id, UserModel user);
+    void deleteById(Long id);
+    List<UserModel> listAll();
 }

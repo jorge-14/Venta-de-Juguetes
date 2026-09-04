@@ -20,7 +20,7 @@ import lombok.*;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class CreateUserRequestDto {
+public class UpdateUserRequestDto {
 
     private String name;
     private String email;

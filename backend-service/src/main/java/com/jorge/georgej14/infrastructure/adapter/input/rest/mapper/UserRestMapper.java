@@ -1,8 +1,9 @@
 package com.jorge.georgej14.infrastructure.adapter.input.rest.mapper;
 
 import com.jorge.georgej14.domain.model.UserModel;
-import com.jorge.georgej14.infrastructure.adapter.input.rest.request.CreateUserRequestDto;
-import com.jorge.georgej14.infrastructure.adapter.input.rest.response.CreateUserResponseDto;
+import com.jorge.georgej14.infrastructure.adapter.input.rest.request.UpdateUserRequestDto;
+import com.jorge.georgej14.infrastructure.adapter.input.rest.request.UserRequestDto;
+import com.jorge.georgej14.infrastructure.adapter.input.rest.response.UserResponseDto;
 import org.springframework.stereotype.Component;
 
 /*
@@ -20,19 +21,26 @@ import org.springframework.stereotype.Component;
 @Component
 public class UserRestMapper {
 
-    public UserModel toModel(CreateUserRequestDto dto) {
+    public UserModel toModel(UserRequestDto dto) {
         UserModel model = new UserModel();
         model.setName(dto.getName());
         model.setEmail(dto.getEmail());
         return model;
     }
 
-    public CreateUserResponseDto toResponse(UserModel model) {
-        return CreateUserResponseDto.builder()
+    public UserResponseDto toResponse(UserModel model) {
+        return UserResponseDto.builder()
                 .id(model.getId())
                 .name(model.getName())
                 .email(model.getEmail())
                 .build();
+    }
+
+    public UserModel toModel(UpdateUserRequestDto dto) {
+        UserModel model = new UserModel();
+        model.setName(dto.getName());
+        model.setEmail(dto.getEmail());
+        return model;
     }
 
 }

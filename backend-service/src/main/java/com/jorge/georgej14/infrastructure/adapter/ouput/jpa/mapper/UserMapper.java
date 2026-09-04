@@ -2,6 +2,7 @@ package com.jorge.georgej14.infrastructure.adapter.ouput.jpa.mapper;
 
 import com.jorge.georgej14.domain.model.UserModel;
 import com.jorge.georgej14.infrastructure.adapter.ouput.jpa.entity.UserEntity;
+import org.springframework.stereotype.Component;
 
 /*
  *----------------------------------------
@@ -14,9 +15,11 @@ import com.jorge.georgej14.infrastructure.adapter.ouput.jpa.entity.UserEntity;
  *   03.09.2026 | Jorge Luis Choque Callizaya | Creación Inicial
  *----------------------------------------
  */
+
+@Component
 public class UserMapper {
 
-    public static UserModel toModel(UserEntity userEntity) {
+    public UserModel toModel(UserEntity userEntity) {
         return new UserModel(
                 userEntity.getId(),
                 userEntity.getName(),
@@ -24,14 +27,11 @@ public class UserMapper {
         );
     }
 
-    public static UserEntity toEntity(UserModel userModel) {
+    public UserEntity toEntity(UserModel userModel) {
         UserEntity entity = new UserEntity();
         entity.setId(userModel.getId());
         entity.setName(userModel.getName());
         entity.setEmail(userModel.getEmail());
         return entity;
     }
-
-
-
 }
